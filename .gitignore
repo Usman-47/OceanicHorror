@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-./oceanic_roadmap.rar
+.oceanic_roadmap.rar
 
 # testing
 /coverage
