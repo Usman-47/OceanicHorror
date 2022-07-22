@@ -25,12 +25,20 @@ import Phase1Windmill from "../../assets/Phase1_Windmill.gif";
 import Windmill from "../../assets/windmill.gif";
 import Phase2Birds1 from "../../assets/Phase2_birds1.gif";
 import Phase2Birds from "../../assets/Phase2_birds.gif";
+import Camel from "../../assets/Camel.gif";
+import Camel2 from "../../assets/Camel2.gif";
 import Phase2Windmill from "../../assets/Phase2_windmill.gif";
 import Smoke from "../../assets/smoke.gif";
 import Cloud1 from "../../assets/Cloud1.svg";
-import Cloud2 from "../../assets/Cloud2.svg";
-import Cloud3 from "../../assets/Cloud3.svg";
+import F18 from "../../assets/F18.svg";
+import IslandTruck2 from "../../assets/IslandTruck2.svg";
+import IslandTruck1 from "../../assets/IslandTruck1.svg";
+import AircraftCarrier from "../../assets/AircraftCarrier.svg";
 import Phase1Helicaptor from "../../assets/Phase1_helicaptor.svg";
+import Helicaptor from "../../assets/helicaptor.gif";
+import Phase4Truck from "../../assets/Phase4Truck.svg";
+import OilBoat from "../../assets/OilBoat.svg";
+import Phase4helicaptor from "../../assets/Phase4helicaptor.svg";
 import "gsap/CSSPlugin";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 const Index = () => {
@@ -48,12 +56,11 @@ const Index = () => {
     });
     const submarine = gsap.timeline({
       scrollTrigger: {
-        scrub: 1,
+        scrub: 1.5,
         start: "1500px",
         end: "+=2000px",
       },
     });
-    const tee = gsap.timeline();
     tween.to("#warShip", {
       motionPath: {
         path: [
@@ -64,9 +71,9 @@ const Index = () => {
           { x: -280, y: 350 },
           { x: -100, y: 450 },
           { x: -120, y: 720 },
-          { x: 220, y: 800 },
-          { x: -170, y: 970 },
-          { x: 280, y: 1450 },
+          { x: 220, y: 850 },
+          { x: -190, y: 980 },
+          { x: 300, y: 1450 },
         ],
         align: "self",
         alignOrigin: [0.5, 0.5],
@@ -82,7 +89,7 @@ const Index = () => {
       delay: 10,
     });
     submarine.to("#submarine", {
-      x: -220,
+      x: -250,
       y: 40,
       rotate: -30,
       duration: 10,
@@ -133,9 +140,9 @@ const Index = () => {
         scrollTrigger:{
           scrub:1
         },
-        x:500
+        x:300,
     });
-    tee.to(".truck",{
+    gsap.to(".truck",{
         motionPath:{
             path:[{x:0},{x:160}],
             align:'self',
@@ -146,7 +153,7 @@ const Index = () => {
       repeat:-1,
        yoyo:true,
     })
-    tee.to(".tractor",{
+    gsap.to(".tractor",{
         motionPath:{
             path:[{x:0,y:0},{x:130,y:80},],
             align:'self',
@@ -158,7 +165,7 @@ const Index = () => {
       immediateRender:true,
        yoyo:true,
     });
-    tee.to(".tanker",{
+    gsap.to(".tanker",{
         motionPath:{
             path:[{x:0,y:0},{x:-18,y:-40},{x:-90,y:-90}],
             align:'self',
@@ -170,21 +177,21 @@ const Index = () => {
        yoyo:true,
        duration:30
     });
-    tee.to(".birds1",{
+    gsap.to(".birds1",{
         x:200,
         y:90,
         duration:20,
         repeat:-1,
         yoyo:true  
       });
-    tee.to(".birds",{
+    gsap.to(".birds",{
         x:200,
         y:-90,
         duration:20,
         repeat:-1,
         yoyo:true  
       });
-    tee.to(".helicaptor",{
+    gsap.to(".helicaptor",{
         motionPath:{
             path:[{x:0,y:10},{x:-130,y:40},{x:-200,y:-10},{x:-400,y:-100},{x:-400,y:-300}],
             align:'self',
@@ -197,7 +204,106 @@ const Index = () => {
        yoyo:true,
        scale: (3.0),
     });
-   
+   gsap.to(".f18",{
+    motionPath:{
+      path:[{x:0,y:10},{x:130,y:-40},{x:200,y:-10},{x:400,y:-100},{x:400,y:-300},{x:100,y:-200}],
+      align:'self',
+      alignOrigin: [0.5, 0.5],
+      autoRotate:300
+  },
+duration:50,
+repeat:-1,
+immediateRender:true,
+ scale: (2.0),
+   });
+   gsap.to('.militaryTruck',{
+    x:150,
+    y:95,
+    duration:30,
+    repeat:-1,
+   });
+   gsap.to('.militaryTruck2',{
+    x:-180,
+    y:0,
+    duration:20,
+    repeat:-1,
+    rotate: 20,
+   });
+   gsap.to('.militaryTruck3',{
+    x:400,
+    y:70,
+    duration:50,
+    repeat:-1,
+    rotate: -30,
+   });
+   gsap.to('.aircraftCarrier',{
+    x:400,
+    y:-95,
+    duration:40,
+    repeat:-1,
+    rotation:-10
+   });
+   gsap.to(".camel",{
+    motionPath:{
+      path:[{x:300,y:5},{x:400,y:10},{x:600,y:30}],
+      align:'self',
+      alignOrigin: [0.5, 0.5],
+      // autoRotate:0,
+  },
+    duration:200,
+    repeat:-1,
+    // rotate: -20,
+   });
+   gsap.to(".camel1",{
+    x:-430,
+    y:-20,
+    duration:100,
+    repeat:-1,
+    rotate: -10
+   });
+   gsap.to(".baseTruck",{
+    motionPath:{
+      path:[{x:0,y:0},{x:150,y:30},{x:200,y:10},{x:510,y:70}],
+      align:'self',
+      alignOrigin: [0.5, 0.5],
+      autoRotate:-30,
+  },
+    duration:30,
+    repeat:-1,
+    rotate: -20,
+   });
+   gsap.to(".helicaptor4",{
+    motionPath:{
+      path:[{x:0,y:0},{x:300,y:50},{x:600,y:120},{x:900,y:500},{x:600,y:450},{x:300,y:500},{x:100,y:450}],
+      align:'self',
+      alignOrigin: [0.5, 0.5],
+      autoRotate:-10,
+  },
+    duration:20,
+    repeat:-1,
+    delay:2,
+    scale: 1.0
+   });
+   gsap.to(".helicaptop41",{
+    motionPath:{
+      path:[{x:0,y:0},{x:300,y:50},{x:600,y:120},{x:900,y:-50},{x:700,y:-150},{x:500,y:-280},{x:300,y:-350}],
+      align:'self',
+      alignOrigin: [0.5, 0.5],
+      autoRotate:-20,
+  },
+    duration:20,
+    repeat:-1,
+   });
+   gsap.to(".boat",{
+    motionPath:{
+      path:[{x:300,y:100},{x:400,y:200},{x:450,y:350}],
+      align:'self',
+      alignOrigin: [0.5, 0.5],
+      autoRotate:-30,
+  },
+    duration:30,
+     repeat:-1,
+   });
   }, []);
 
   return (
@@ -213,8 +319,7 @@ const Index = () => {
           id="backMountain"
         />
         <img src={Cloud1} alt="Clod_1" className="cloud1" />
-        {/* <img src={Cloud2} alt="Clod_1" className='cloud2'/>
-         <img src={Cloud3} alt="Clod_1" className='cloud3'/> */}
+       
       </div>
       <div className="Water_image" id="content">
         <div className="moutian_frames">
@@ -241,6 +346,7 @@ const Index = () => {
             <img src={Windmill} alt="Windmall" className='windmall'/>
             <img src={Phase1Helicaptor} alt="Helicaptor" className='helicaptor'/>
             <img src={Phase1Windmill} alt="WindMill" className="windmill"/>
+            <img src={OilBoat} alt="Boat" className="boat"/>
         </div>
         <div className="phase2">
           <img src={Phase2} alt="Phase2" />
@@ -254,9 +360,19 @@ const Index = () => {
         </div>
         <div className="island">
           <img src={Island} alt="Island" />
+          <img src={F18} alt="F-18" className="f18"/>
+          <img src={AircraftCarrier} alt="Aircraft Carrire" className="aircraftCarrier"/>
+          <img src={IslandTruck1} alt="Military Truck" className="militaryTruck"/>
+          <img src={IslandTruck2} alt="Military Truck" className="militaryTruck2"/>
+          <img src={IslandTruck1} alt="Military Truck" className="militaryTruck3"/>
         </div>
         <div className="phase4">
           <img src={Phase4} alt="Phase4" />
+          <img src={Camel} alt="Camel" className="camel"/>
+          <img src={Camel2} alt="Camel" className="camel1"/>
+          <img src={Helicaptor} alt="Helicaptor" className="helicaptor4"/>
+          <img src={Phase4Truck} alt="Truck" className="baseTruck"/>
+          <img src={Phase4helicaptor} alt="Helicaptor" className="helicaptop41"/>
         </div>
         <div className="phase8">
           <img src={Phase8} alt="Phase8" />

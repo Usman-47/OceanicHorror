@@ -19,6 +19,8 @@ const Style = styled.div`
     background-repeat: no-repeat;
     opacity: 10;
     position: relative;
+    background-size: cover;
+    background-position: center;
     img {
       height: 100%;
       width: 100%;
@@ -31,8 +33,7 @@ const Style = styled.div`
     top: 25%;
     left: 0px;
     /* position: relative; */
-    object-fit: cover;
-    /* overflow: hidden; */
+    /* overflow: hidden;   */
     .back {
       width: 100%;
       height: 100%;
@@ -41,13 +42,11 @@ const Style = styled.div`
       left: 0%;
       object-fit: cover;
       opacity: 2;
-     
     }
-    .cloud1{
-        position: absolute;
-        top:-10%;
-        left: 0%;
-        
+    .cloud1 {
+      position: absolute;
+      top: -10%;
+      left: 0%;
     }
   }
   .phase3 {
@@ -57,75 +56,82 @@ const Style = styled.div`
     top: 4%;
     left: 0;
     opacity: 1;
-    .truck{
-        width: 20px;
-        height: 15px;
-        position: absolute;
-        top: 57%;
-        left: 15%;
+    .truck {
+      width: 20px;
+      height: 15px;
+      position: absolute;
+      top: 57%;
+      left: 15%;
     }
-    .tractor{
+    .tractor {
       width: 19px;
       height: 23px;
       position: absolute;
       top: 58%;
-        left: 20%;
+      left: 20%;
     }
-    .smoke{
+    .smoke {
       width: 28px;
       height: 35px;
       position: absolute;
       top: 25%;
-      right:30.7%;
+      right: 30.7%;
     }
-    .smoke1{
+    .smoke1 {
       width: 28px;
       height: 35px;
       position: absolute;
       top: 25%;
-      right:30%;
+      right: 30%;
     }
-    .smoke2{
+    .smoke2 {
       width: 70px;
       height: 35px;
       position: absolute;
       top: 27.7%;
-      right:29.8%;
+      right: 29.8%;
     }
-    .smoke3{
+    .smoke3 {
       width: 70px;
       height: 35px;
       position: absolute;
       top: 27.7%;
-      right:31.7%;
+      right: 31.7%;
     }
-    .smoke4{
+    .smoke4 {
       width: 70px;
       height: 35px;
       position: absolute;
       top: 27.7%;
-      right:33.7%;
+      right: 33.7%;
     }
-    .windmall{
+    .windmall {
       width: 58px;
       height: 57px;
       position: absolute;
       top: 37%;
       right: 36%;
     }
-    .helicaptor{
+    .helicaptor {
       width: 32;
       height: 21px;
       position: absolute;
-      top:70%;
-      right:-7.7%;
+      top: 70%;
+      right: -7.7%;
     }
-    .windmill{
+    .windmill {
       width: 70px;
       height: 90px;
       position: absolute;
-      top:22.5%;
+      top: 22.5%;
       left: 42.7%;
+    }
+    .boat {
+      width: 151px;
+      height: 109px;
+      position: absolute;
+      bottom: 0;
+      left: 2%;
     }
   }
   .phase2 {
@@ -135,63 +141,100 @@ const Style = styled.div`
     transform: rotateX(-5deg);
     top: 9.3%;
     right: 0;
-    .smoke{
+    .smoke {
       width: 40px;
       height: 35px;
       position: absolute;
       top: 14.05%;
-      right:24.1%;
+      right: 24.1%;
     }
-    .smoke1{
+    .smoke1 {
       width: 40px;
       height: 35px;
       position: absolute;
       top: 14.3%;
-      right:24.9%;
+      right: 24.9%;
     }
-    .windmill{
+    .windmill {
       width: 100px;
       height: 100px;
       position: absolute;
-      top:7%;
+      top: 7%;
       right: 35%;
     }
-    .birds1{
+    .birds1 {
       position: absolute;
-width: 156px;
-height: 99px;
-top:16%;
-right:31% ;
+      width: 156px;
+      height: 99px;
+      top: 16%;
+      right: 31%;
     }
-    .birds{
+    .birds {
       position: absolute;
-width: 94px;
-height: 78px;
-top:7%;
-right:24% ;
+      width: 94px;
+      height: 78px;
+      top: 7%;
+      right: 24%;
     }
-    .tanker{
+    .tanker {
       position: absolute;
-width: 30px;
-height: 30px;
-top:32%;
-right: 14%;
-transform: rotate(-30deg);
+      width: 30px;
+      height: 30px;
+      top: 32%;
+      right: 14%;
+      transform: rotate(-30deg);
     }
-    .tanker1{
+    .tanker1 {
       width: 41.63px;
-height: 32px;
-position:  absolute;
-top: 14%;
-right: 22%;
+      height: 32px;
+      position: absolute;
+      top: 14%;
+      right: 22%;
     }
   }
   .island {
     width: 75%;
-    height: 500px;
+    height: 322px;
     position: absolute;
-    top: 21.5%;
+    top: 21%;
     left: 0;
+    .f18 {
+      position: absolute;
+      width: 51px;
+      height: 36px;
+      top: -5%;
+      left: 5%;
+    }
+    .aircraftCarrier {
+      position: absolute;
+      width: 392.1px;
+      height: 242px;
+      top: 90%;
+      left: 0%;
+      transform: rotate(-10deg);
+    }
+    .militaryTruck {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 41%;
+      left: 38%;
+    }
+    .militaryTruck2 {
+      width: 35px;
+      height: 25px;
+      position: absolute;
+      top: 62%;
+      right: 25%;
+      transform: rotate(-30deg);
+    }
+    .militaryTruck3 {
+      width: 20px;
+      height: 25px;
+      position: absolute;
+      top: 52%;
+      left: 8%;
+    }
   }
   .phase4 {
     width: 100%;
@@ -199,17 +242,52 @@ right: 22%;
     position: absolute;
     top: 32%;
     left: 0;
+    .camel {
+      width: 168px;
+      height: 36px;
+      position: absolute;
+      top: 27%;
+      left: 1%;
+      transform: rotate(10deg);
+    }
+    .camel1 {
+      width: 168px;
+      height: 36px;
+      position: absolute;
+      top: 13%;
+      left: 45%;
+      transform: rotate(10deg);
+    }
+    .helicaptor4 {
+      position: absolute;
+      width: 120px;
+      height: 80px;
+      top: 19%;
+      left: 4%;
+    }
+    .baseTruck {
+      width: 27px;
+      height: 24px;
+      position: absolute;
+      top: 53%;
+      left: 23%;
+      /* transform: rotate(-10deg); */
+    }
+    .helicaptop41 {
+      width: 62px;
+      height: 37px;
+      position: absolute;
+      top: 47%;
+      left: 18%;
+    }
   }
   .warShip {
-    /* width: 110px;
-    height: 80px; */
     width: 156px;
     height: 168px;
     position: absolute;
     top: 5%;
     right: 25%;
-    /* transform: rotate(70deg,30deg);  */
-    /* transform: rotate(30deg); */
+    overflow: hidden;
   }
   .phase8 {
     width: 40%;
@@ -228,7 +306,6 @@ right: 22%;
   .submarine {
     width: 166px;
     height: 113px;
-    overflow: hidden;
     position: absolute;
     top: 49.5%;
     right: 14.5%;
@@ -246,7 +323,7 @@ right: 22%;
     top: 5%;
     right: 5%;
   }
- .moutian_frames{
+  .moutian_frames {
     width: 100%;
     height: 652px;
     position: absolute;
@@ -257,13 +334,14 @@ right: 22%;
     .front {
       width: 107%;
       height: 100%;
+      object-fit: cover;
       position: absolute;
       top: 0%;
       left: 0%;
-      opacity: 1000;
-      
+      /* opacity: 1000; */
+      /* overflow: hidden; */
     }
- }
+  }
 `;
 
 export default Style;
