@@ -90,7 +90,6 @@ const Index = () => {
     submarine.to("#submarine", {
       x: 0,
       y: 0,
-      delay: 10,
     });
     submarine.to("#submarine", {
       x: -250,
@@ -308,6 +307,45 @@ immediateRender:true,
     duration:30,
      repeat:-1,
    });
+   gsap.to("#warShip1",{
+    x:340,
+    y:400,
+    duration:20,
+rotate: 20,
+repeat:-1
+   });
+   gsap.to('.boat2',{
+    x:-115,
+    y:250,
+    duration:25,
+    rotateX: -20,
+    repeat:-1,
+    delay:10,
+   });
+   gsap.to('.boat1',{
+    x:75,
+    y:-168,
+    duration:20,
+    rotate: -20,
+    repeat:-1,
+    delay:5,
+   });
+   gsap.to('.boat3',{
+    motionPath:{
+      path:[{x:300,y:300},{x:420,y:350}]
+    },
+    duration:45,
+    rotate: -20,
+    repeat:-1,
+   });
+   gsap.to(".birds8",{
+    x:-400,
+    y:300,
+    rotate: -20,
+    duration:15,
+    scale: 2.0,
+    repeat:-1,
+   })
   }, []);
 
   return (
@@ -389,7 +427,7 @@ immediateRender:true,
           <img src={Boat1} alt="Boat" className="boat1"/>
           <img src={Boat2} alt="Boat" className="boat2"/>
           <img src={Boat3} alt="Boat" className="boat3"/>
-          <img src={WarShip} alt="War_Ship" className="warShip"/>
+          <img src={WarShip} alt="War_Ship" className="warShip" id="warShip1"/>
         </div>
         <div className="submarine" id="submarine">
           <img src={Submarine} alt="Submarine" />
