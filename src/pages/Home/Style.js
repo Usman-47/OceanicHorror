@@ -295,13 +295,63 @@ const Style = styled.div`
     position: absolute;
     top: 54%;
     right: 0;
+    .birds8{
+       position: absolute;
+       top: 0;
+       right: 5%;
+       width: 10%;
+       height: 90px;
+      transform: rotate(-30deg);
+    }
   }
   .phase10 {
-    width: 54%;
-    height: 912px;
+    width: 58%;
+    height: 1050px;
     position: absolute;
-    top: 54%;
+    top: 55%;
     left: 0;
+    .windmill{
+      position: absolute;
+      width: 50px;
+      height: 60px;
+      top: 39.5%;
+      right: 38%;
+    }
+    .windmill1{
+      position: absolute;
+      width: 80px;
+      height: 95px;
+      top: 82%;
+      right: 8%;
+    }
+    .boat1{
+      width: 82px;
+      height: 78px;
+      position: absolute;
+      top: 60%;
+      left: 15%;
+    }
+    .boat2{
+      width: 70px;
+      height: 46px;
+      position: absolute;
+      top: 55%;
+      left: 35%;
+    }
+    .boat3{
+      width: 72px;
+      height: 45px;
+      position: absolute;
+      top: 53%;
+      left: 10%;
+    }
+    .warShip{
+      position: absolute;
+      top: -15%;
+      left: 2%;
+      height: 72px;
+      width: 105px;
+    }
   }
   .submarine {
     width: 166px;

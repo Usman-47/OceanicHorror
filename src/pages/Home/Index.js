@@ -12,6 +12,7 @@ import Phase10 from "../../assets/Phase10.png";
 import Submarine from "../../assets/Submarine.png";
 import Underwater_Submarine from "../../assets/Underwater_Submarine.svg";
 import War_Ship from "../../assets/War_Ship.svg";
+import WarShip from "../../assets/WarShip.svg";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Card from "../../components/Card/Index";
@@ -38,6 +39,9 @@ import Phase1Helicaptor from "../../assets/Phase1_helicaptor.svg";
 import Helicaptor from "../../assets/helicaptor.gif";
 import Phase4Truck from "../../assets/Phase4Truck.svg";
 import OilBoat from "../../assets/OilBoat.svg";
+import Boat1 from "../../assets/boat1.svg";
+import Boat2 from "../../assets/boat2.svg";
+import Boat3 from "../../assets/boat3.svg";
 import Phase4helicaptor from "../../assets/Phase4helicaptor.svg";
 import "gsap/CSSPlugin";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -376,9 +380,16 @@ immediateRender:true,
         </div>
         <div className="phase8">
           <img src={Phase8} alt="Phase8" />
+          <img src={Phase2Birds} alt="Birds" className="birds8"/>
         </div>
         <div className="phase10">
           <img src={Phase10} alt="Phase10" />
+          <img src={Phase1Windmill} alt="Wind Mill" className="windmill"/>
+          <img src={Phase1Windmill} alt="Wind Mill" className="windmill1"/>
+          <img src={Boat1} alt="Boat" className="boat1"/>
+          <img src={Boat2} alt="Boat" className="boat2"/>
+          <img src={Boat3} alt="Boat" className="boat3"/>
+          <img src={WarShip} alt="War_Ship" className="warShip"/>
         </div>
         <div className="submarine" id="submarine">
           <img src={Submarine} alt="Submarine" />
