@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState} from "react";
 import Style from "./Style";
 import { gsap } from "gsap";
 import Sky from "../../assets/Sky.gif";
@@ -45,8 +45,34 @@ import Boat3 from "../../assets/boat3.svg";
 import Phase4helicaptor from "../../assets/Phase4helicaptor.svg";
 import "gsap/CSSPlugin";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+gsap.registerEffect({
+  name: "zoom",
+  effect: (targets, config) => {
+    const vars = {transformOrigin: "0px 0px", ...config},
+          { scale, origin } = config,
+          clamp = gsap.utils.clamp(-100 * (scale - 1), 0);
+    delete vars.origin;
+    vars.xPercent = clamp((0.5 - origin[0] * scale) * 100);
+    vars.yPercent = clamp((0.5 - origin[1] * scale) * 100);
+    vars.overwrite = "auto";
+    return gsap.to(targets, vars);
+  },
+  extendTimeline: true,
+  // defaults: {origin: [0.5, 0.5], scale: 2}
+});
 const Index = () => {
-  const warRef = useRef();
+  const [index,setIndex]=useState(0);
+  
+  const zoomData = [
+    {scale: 1, origin: [0, 0]},
+    {scale: 1.5, origin: [0.25, .35]},
+    {scale: 1.5, origin: [0.75, .4]},
+    {scale: 1.5, origin: [0.65, .45]},
+    {scale: 1.5, origin: [0.60, .47]},
+    {scale: 1.5, origin: [0.75, .53]},
+    {scale: 1.5, origin: [0.25, .6]},
+  ];
+  console.log(zoomData[index],"Index");
   useEffect(() => {
     const tween = gsap.timeline({
       scrollTrigger: {
@@ -56,13 +82,43 @@ const Index = () => {
     // onUpdate: self => {
     //   gsap.to("#warShip", {rotation: () => self.direction === 1 ? 0 : -180, overwrite: 'auto'});
     //   },
+    onUpdate:(self)=>{
+      console.log(self.progress,"Progress");
+      if(self.progress>0.067 && self.progress<0.154){
+      setIndex(1);
+      }
+      else if(self.progress>0.212 && self.progress<0.26){
+        setIndex(2);
+      }
+      else if(self.progress>0.437 && self.progress<0.49){
+        setIndex(3);
+      }
+      else if(self.progress>0.80 && self.progress<0.95){
+        setIndex(4);
+      }
+      else{
+        setIndex(0);
+      }
+    },
     }
     });
     const submarine = gsap.timeline({
       scrollTrigger: {
-        scrub: 1.5,
-        start: "1500px",
-        end: "+=2000px",
+        scrub: 1,
+        start: "1700px",
+        end: "+=1800px",
+        onUpdate:(self)=>{
+          console.log(self.progress,"Progress submarine");
+          if(self.progress>0.38 && self.progress<0.6){
+            setIndex(5);
+            }
+         else if(self.progress>0.75 && self.progress<0.80){
+            setIndex(6);
+            }
+            else{
+              setIndex(0);
+            }
+        }
       },
     });
     tween.to("#warShip", {
@@ -70,7 +126,7 @@ const Index = () => {
         path: [
           { x: 0, y: 0 },
           { x: -120, y: 90 },
-          { x: -350, y: 160 },
+          { x: -350, y: 160},
           { x: -180, y: 230 },
           { x: -280, y: 350 },
           { x: -100, y: 450 },
@@ -86,40 +142,42 @@ const Index = () => {
       duration: 10,
       immediateRender: true,
       ease: "none",
+      
     });
     submarine.to("#submarine", {
       x: 0,
       y: 0,
+    
     });
     submarine.to("#submarine", {
-      x: -250,
+      x: -150,
       y: 40,
       rotate: -30,
       duration: 10,
     });
     submarine.to("#submarine", {
-      x: -210,
+      x: -220,
       y: 240,
       rotate: -65,
-      duration: 5,
+      duration: 20,
     });
     submarine.to("#submarine", {
-      x: -510,
-      y: 320,
-      rotate: -20,
+      x: -500,
+      y: 400,
+      rotate: 0,
       duration: 3,
     });
     submarine.to("#submarine", {
-      x: -600,
-      y: 560,
-      rotateY: -130,
-      rotateZ: 55,
+      x: -460,
+      y: 760,
       duration: 5,
+      rotateZ:-150,
+      autoRotate:true
     });
     submarine.to("#submarine", {
       x: 90,
       y: 850,
-      rotate: 10,
+       rotate: -170,
       duration: 5,
       opacity: 0,
     });
@@ -139,12 +197,14 @@ const Index = () => {
         },
         y:500
     });
+   
     gsap.to(".cloud1",{
         scrollTrigger:{
           scrub:1
         },
         x:300,
     });
+
     gsap.to(".truck",{
         motionPath:{
             path:[{x:0},{x:160}],
@@ -345,10 +405,19 @@ repeat:-1
     duration:15,
     scale: 2.0,
     repeat:-1,
-   })
+   });
   }, []);
 
-  return (
+useEffect(()=>{
+  gsap.effects.zoom(".Water_image", {
+    scale: zoomData[index].scale,
+    origin: zoomData[index].origin,
+    duration: 1,
+    ease: "power1.inOut"
+  });
+},[index]);
+ 
+return (
     <Style>
       <div className="sky_image"><img src={Sky} alt="Sky_Image"/> </div>
 
@@ -373,11 +442,12 @@ repeat:-1
           />
         </div>
 
-        <div ref={warRef} className="warShip" id="warShip">
+        <div className="warShip" id="warShip">
           <img src={War_Ship} alt="War Ship" />
         </div>
         <div className="phase3">
-          <img src={Phase3} alt="Phase3" />
+
+          <img src={Phase3} alt="Phase3"  id="#img"/>
           <img src={Phase1Truck} alt="Truck" className='truck'/>
             <img src={Phase1Tractor} alt="Tractor" className='tractor'/>
             <img src={Smoke} alt="Smoke" className='smoke'/>
@@ -388,7 +458,9 @@ repeat:-1
             <img src={Windmill} alt="Windmall" className='windmall'/>
             <img src={Phase1Helicaptor} alt="Helicaptor" className='helicaptor'/>
             <img src={Phase1Windmill} alt="WindMill" className="windmill"/>
-            <img src={OilBoat} alt="Boat" className="boat"/>
+            {/* <img src={OilBoat} alt="Boat" className="boat"/> */}
+
+            
         </div>
         <div className="phase2">
           <img src={Phase2} alt="Phase2" />

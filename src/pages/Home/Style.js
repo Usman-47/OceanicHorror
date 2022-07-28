@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Water from "../../assets/Water.png";
-
+import Phase3 from "../../assets/Phase3.png";
 const Style = styled.div`
   background: linear-gradient(180deg, #0c0c0c 0%, #1e1e1e 100%);
   .sky_image {
@@ -56,6 +56,7 @@ const Style = styled.div`
     top: 4%;
     left: 0;
     opacity: 1;
+   
     .truck {
       width: 20px;
       height: 15px;
@@ -392,6 +393,18 @@ const Style = styled.div`
       /* overflow: hidden; */
     }
   }
+  #svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+#img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
 `;
 
 export default Style;
