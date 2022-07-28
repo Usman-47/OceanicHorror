@@ -37,12 +37,18 @@ import IslandTruck1 from "../../assets/IslandTruck1.svg";
 import AircraftCarrier from "../../assets/AircraftCarrier.svg";
 import Phase1Helicaptor from "../../assets/Phase1_helicaptor.svg";
 import Helicaptor from "../../assets/helicaptor.gif";
+import WindWhite from "../../assets/WindWhite.gif";
+import Scuba from "../../assets/Scuba.gif";
+import Dragon from "../../assets/Dragon.gif";
+import Dragon2 from "../../assets/Dragon2.gif";
 import Phase4Truck from "../../assets/Phase4Truck.svg";
 import OilBoat from "../../assets/OilBoat.svg";
 import Boat1 from "../../assets/boat1.svg";
 import Boat2 from "../../assets/boat2.svg";
 import Boat3 from "../../assets/boat3.svg";
+import Bubbles from "../../assets/Bubbles.svg";
 import Phase4helicaptor from "../../assets/Phase4helicaptor.svg";
+import Tractor10 from "../../assets/Tractor10.png";
 import "gsap/CSSPlugin";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 gsap.registerEffect({
@@ -72,7 +78,7 @@ const Index = () => {
     {scale: 1.5, origin: [0.75, .53]},
     {scale: 1.5, origin: [0.25, .6]},
   ];
-  console.log(zoomData[index],"Index");
+  
   useEffect(() => {
     const tween = gsap.timeline({
       scrollTrigger: {
@@ -83,7 +89,7 @@ const Index = () => {
     //   gsap.to("#warShip", {rotation: () => self.direction === 1 ? 0 : -180, overwrite: 'auto'});
     //   },
     onUpdate:(self)=>{
-      console.log(self.progress,"Progress");
+      
       if(self.progress>0.067 && self.progress<0.154){
       setIndex(1);
       }
@@ -108,7 +114,6 @@ const Index = () => {
         start: "1700px",
         end: "+=1800px",
         onUpdate:(self)=>{
-          console.log(self.progress,"Progress submarine");
           if(self.progress>0.38 && self.progress<0.6){
             setIndex(5);
             }
@@ -401,11 +406,53 @@ repeat:-1
    gsap.to(".birds8",{
     x:-400,
     y:300,
-    rotate: -20,
+    rotate: -50,
     duration:15,
     scale: 2.0,
     repeat:-1,
    });
+   gsap.to(".tractor10",{
+    motionPath:{
+      path:[{x:0,y:0},{x:-30,y:-60},{x:-200,y:-160},{x:-205,y:-170}],
+      align:"self",
+      autoRotate:90,
+    },
+    // rotate: -20,
+    duration:20,
+    repeat:-1,
+   });
+   gsap.to(".dragon2",{
+    motionPath:{
+      path:[{x:0,y:0},{x:50,y:-120},{x:200,y:-290},{x:250,y:-400}],
+      align:"self",
+      autoRotate:90
+    },
+    duration:20,
+    repeat:-1,
+   });
+   gsap.to(".scuba",{
+    motionPath:{
+       path:[{x:0,y:0},{x:-300,y:300},{x:-800,y:400},{x:-1200,y:200}],
+       align:"self",
+       autoRotate:-180,
+    },
+    duration:60,
+    repeat:-1
+   });
+   gsap.to(".bubble",{
+    y:-400,
+    duration:10,
+    repeat:-1,
+    scaleY:1.5,
+    opacity: 0.1,
+   });
+   gsap.to(".bubble1",{
+    y:-400,
+    duration:10,
+    repeat:-1,
+    scaleY:1.5,
+    opacity: 0.1,
+   })
   }, []);
 
 useEffect(()=>{
@@ -491,6 +538,8 @@ return (
         <div className="phase8">
           <img src={Phase8} alt="Phase8" />
           <img src={Phase2Birds} alt="Birds" className="birds8"/>
+          <img src={Dragon} alt="Dragon" className="dragon"/>
+          <img src={Dragon2} alt="Dragon" className="dragon2"/>
         </div>
         <div className="phase10">
           <img src={Phase10} alt="Phase10" />
@@ -500,12 +549,23 @@ return (
           <img src={Boat2} alt="Boat" className="boat2"/>
           <img src={Boat3} alt="Boat" className="boat3"/>
           <img src={WarShip} alt="War_Ship" className="warShip" id="warShip1"/>
+          <img src={Tractor10} alt="Tractor" className="tractor10"/>
+          <img src={WindWhite} alt="Wind_Mill" className="windWhite"/>
         </div>
         <div className="submarine" id="submarine">
           <img src={Submarine} alt="Submarine" />
         </div>
         <div className="Underwater_Submarine" id="#underWater">
           <img src={Underwater_Submarine} alt="Underwater_Submarine" />
+        </div>
+        <div className="scuba">
+          <img src={Scuba} alt="Scuba" />
+        </div>
+        <div className="bubble">
+          <img src={Bubbles} alt="Bubble"/>
+        </div>
+        <div className="bubble1">
+          <img src={Bubbles} alt="Bubble"/>
         </div>
       </div>
     </Style>

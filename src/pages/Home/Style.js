@@ -304,6 +304,22 @@ const Style = styled.div`
        height: 90px;
       transform: rotate(-30deg);
     }
+    .dragon{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 40%;
+      right: 30%;
+      transform: rotate(30deg);
+    }
+    .dragon2{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+    
+    }
   }
   .phase10 {
     width: 58%;
@@ -353,6 +369,21 @@ const Style = styled.div`
       height: 72px;
       width: 105px;
     }
+    .tractor10{
+      width: 10px;
+      height: 20px;
+      position: absolute;
+      bottom: 22%;
+      right: 5%;
+      transform: rotate(-20deg);
+    }
+    .windWhite{
+      position: absolute;
+      width: 60px;
+      height: 90px;
+      bottom: 13%;
+      left: 5%;
+    }
   }
   .submarine {
     width: 166px;
@@ -393,18 +424,31 @@ const Style = styled.div`
       /* overflow: hidden; */
     }
   }
-  #svg {
+ .scuba{
+  width: 200px;
+  height: 150px;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-}
-#img {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-}
+  bottom:15%;
+  right: 3%;
+  opacity:0.4;
+ }
+ .bubble{
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  bottom: 2%;
+  right: 0%;
+  opacity: .3;
+ }
+ .bubble1{
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  bottom: 2%;
+  left: 0%;
+  opacity: .3;
+ }
+
 `;
 
 export default Style;
